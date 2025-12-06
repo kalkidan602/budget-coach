@@ -1,6 +1,6 @@
 type SummaryCardProps = {
   label: string;
-  amount: number | string;  // 👈 can accept either
+  amount: number | string;  
   tone?: "income" | "expense" | "balance";
 };
 

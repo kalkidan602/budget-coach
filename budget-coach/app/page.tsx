@@ -12,7 +12,7 @@ export default function HomePage() {
   const monthlyExpenses = 1750;
   const monthlyBalance = monthlyIncome - monthlyExpenses;
 
-  // If user chooses weekly, divide by 4 (simple approximation)
+  // 
   const factor = view === "monthly" ? 1 : 1 / 4;
 
   const incomeToShow = monthlyIncome * factor;
