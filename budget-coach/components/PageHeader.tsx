@@ -1,21 +1,21 @@
-import { subtle } from "crypto";
-import { title } from "process";
-
 type PageHeaderProps = {
-    title:string;
-    subtitle?: string;
+  title: string;
+  subtitle?: string;
 };
-export default function PageHeader({title, subtitle}: PageHeaderProps){
- return (
+
+export default function PageHeader({ title, subtitle }: PageHeaderProps) {
+  return (
     <header className="mb-6">
       <h1 className="text-2xl md:text-3xl font-semibold mb-1">
-       {title}
+        {title}
       </h1>
-    {subtle && (
+
+      {subtitle && (
         <p className="text-sm text-slate-300 max-w-2xl">
-        {subtitle}
+          {subtitle}
         </p>
-    )}
+      )}
     </header>
- );
+  );
 }
+

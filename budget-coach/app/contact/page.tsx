@@ -9,34 +9,26 @@ export default function ContactPage() {
   return (
     <main>
       <PageHeader
-        title="Contact & About"
-        subtitle="This project was built as part of my front-end development course to explore budgeting in a simple, practical way."
+        title="Contact"
+        subtitle="This project was built as part of a front-end development course to explore budgeting in a simple, practical way."
       />
 
-      <p style={{ marginBottom: "12px" }}>
+      <p className="mb-3 text-sm text-slate-200">
         If you have feedback or questions about Budget Coach, you can reach out
         to us using the contact details below.
       </p>
 
       <button
         onClick={() => setShowEmail(!showEmail)}
-        style={{
-          padding: "8px 12px",
-          borderRadius: "6px",
-          border: "none",
-          background: "#10b981",
-          color: "white",
-          cursor: "pointer",
-          marginBottom: "12px",
-        }}
+        className="mb-3 px-3 py-2 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium transition"
       >
         {showEmail ? "Hide email" : "Show email"}
       </button>
 
       {showEmail && (
-        <p>
+        <p className="text-sm text-slate-100">
           Email:{" "}
-          <span style={{ fontFamily: "monospace" }}>
+          <span className="font-mono">
             budgetcoach@gmail.com
           </span>
         </p>
@@ -44,4 +36,3 @@ export default function ContactPage() {
     </main>
   );
 }
-

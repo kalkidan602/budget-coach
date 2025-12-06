@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Budget Coach  
+A simple budgeting dashboard built with Next.js and React. The project helps students and small business owners get a clear overview of their income, expenses, and savings goals. This application was created as part of a front-end development course to practice routing, component structure, styling, and state management.
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##  Project Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Main Routes**
+| Route | Description |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| `/` | Dashboard showing income, expenses, and balance (monthly/weekly). Includes interactive state toggle. |
+| `/add` | Page where users enter income, expenses, and savings goal. Displays a summary and personalized “coach tip.” |
+| `/reports` | Interactive page providing budgeting tips. Users toggle between income and expense insights. |
+| `/contact` | Shows project contact details with a "show/hide email" interactive element. |
+| `/about` | Information about the purpose of the project with a show/hide section for project details. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+##  Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **NavBar**
+Provides navigation between all pages. Highlights the active route using conditional styling.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **PageHeader**
+Reusable component that displays a page title and subtitle across all pages for consistent layout.
 
-## Deploy on Vercel
+### **SummaryCard**
+Styled card component used to display dashboard values (income, expenses, balance) with conditional colors.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **TransactionForm**
+Form component used on the `/add` page. Accepts user input and passes calculated data to the parent through the `onCalculate` callback.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Footer**
+Global footer displayed across all pages.
+
+### **TransactionList**
+ Display fe information which will later be replaced by API.
+
+---
+
+##  State Management
+
+The project uses React’s `useState` hook to manage user interactions and dynamic content:
+
+- **Dashboard (`/`)**: Toggles between monthly and weekly view using state (`view`).
+- **Add Page (`/add`)**: Stores calculated summary results in state and conditionally displays them.
+- **Reports Page (`/reports`)**: Uses state to switch between income and expense tips.
+- **Contact Page (`/contact`)**: Toggles email visibility using state (`showEmail`).
+
+State is used to manage UI visibility, store form values, trigger calculations, and render conditional content.
+
+---
+
+##  Styling & Theme
+
+The project uses **Tailwind CSS** for styling, providing:
+
+- Responsive layout  
+- Consistent dark theme  
+- Conditional button and card styling  
+- Clean, modern UI design  
+
+---
+
+##  Screenshots
+
+### dashboard page
+![Dashboard Screenshot](./screenshots/Dashboard.png)
+
+### Add Transaction Page
+![Add Page Screenshot](./screenshots/transation.png)
+
+### Reports Page
+![Reports Screenshot](./screenshots/reports.png)
+
+### Contact Page
+![Contact Screenshot](./screenshots/contact.png)
