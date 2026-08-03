@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title Login
+    link(rel="stylesheet" href="/stylesheets/style.css")
+  body
+    .container
+      h1 Login
+
+      if errors.length > 0
+        ul.error-list
+          each error in errors
+            li= error.msg
+
+      form(action="/users/login" method="POST")
+        .form-group
+          label(for="email") Email
+          input(
+            type="email"
+            id="email"
+            name="email"
+          )
+
+        .form-group
+          label(for="password") Password
+          input(
+            type="password"
+            id="password"
+            name="password"
+          )
+
+        button(type="submit") Login
+
+      .actions
+        a.button-link(href="/users/register") Create an account
+        a.button-link(href="/") Home

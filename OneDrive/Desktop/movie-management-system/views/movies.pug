@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Movies
+    link(rel="stylesheet" href="/stylesheets/style.css")
+  body
+    .container
+      h1 Movie List
+
+      .nav
+        if loggedIn
+          a.button-link(href="/movies/add") Add Movie
+          a.button-link(href="/users/logout") Logout
+        else
+          a.button-link(href="/users/login") Login
+          a.button-link(href="/users/register") Register
+
+      if movies.length === 0
+        p.center-text No movies found.
+      else
+        ul.movie-list
+          each movie in movies
+            li
+              a(href="/movies/" + movie._id)= movie.name
+              |  - #{movie.year} - Rating: #{movie.rating}
+
+      .actions
+        a.button-link(href="/") Home

@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title Movie Details
+    link(rel="stylesheet" href="/stylesheets/style.css")
+    script(src="/javascripts/delete.js" defer)
+  body
+    .container
+      h1 Movie Details
+
+      .details
+        p
+          strong Name:
+          |  #{movie.name}
+
+        p
+          strong Description:
+          |  #{movie.description}
+
+        p
+          strong Year:
+          |  #{movie.year}
+
+        p
+          strong Genre:
+          |  #{movie.genres}
+
+        p
+          strong Rating:
+          |  #{movie.rating}
+
+      .actions
+        a.button-link(href="/movies/" + movie._id + "/edit") Edit Movie
+
+        button.danger-button(
+          type="button"
+          id="deleteMovie"
+          data-id=movie._id
+        ) Delete Movie
+
+        a.button-link(href="/movies") Back to Movies

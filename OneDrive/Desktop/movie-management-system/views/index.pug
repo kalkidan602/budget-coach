@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Movie Management System
+    link(rel="stylesheet" href="/stylesheets/style.css")
+  body
+    .container
+      h1 Movie Management System
+
+      p.center-text Welcome to the Movie Management System.
+
+      .nav
+        a.button-link(href="/movies") View Movies
+
+        if loggedIn
+          a.button-link(href="/movies/add") Add Movie
+          a.button-link(href="/users/logout") Logout
+        else
+          a.button-link(href="/users/register") Register
+          a.button-link(href="/users/login") Login

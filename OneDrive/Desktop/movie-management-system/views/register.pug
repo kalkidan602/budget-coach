@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title Register
+    link(rel="stylesheet" href="/stylesheets/style.css")
+  body
+    .container
+      h1 Register
+
+      if errors.length > 0
+        ul.error-list
+          each error in errors
+            li= error.msg
+
+      form(action="/users/register" method="POST")
+        .form-group
+          label(for="name") Name
+          input(
+            type="text"
+            id="name"
+            name="name"
+            value=user.name || ""
+          )
+
+        .form-group
+          label(for="email") Email
+          input(
+            type="email"
+            id="email"
+            name="email"
+            value=user.email || ""
+          )
+
+        .form-group
+          label(for="password") Password
+          input(
+            type="password"
+            id="password"
+            name="password"
+          )
+
+        button(type="submit") Register
+
+      .actions
+        a.button-link(href="/users/login") Already have an account? Login
+        a.button-link(href="/") Home
